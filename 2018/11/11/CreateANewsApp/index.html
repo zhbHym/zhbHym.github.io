@@ -1,0 +1,1112 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>Android创建新闻App</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="John Doe">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《Android创建新闻App》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/20/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://Sariay.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+            	<li class="fa fa-/search"><a href="javascript:;" class="popup-trigger" title="Search">搜索</a></li>
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/11/11/CreateANewsApp/" itemprop="url">		
+			Android创建新闻App		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/11/11/CreateANewsApp/" itemprop="url">
+	<time datetime="2018-11-11T12:32:04.970Z" itemprop="datePublished">
+  		2018-11-11
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#Android" title="Android" rel="1">Android</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>  第一次写代码笔记，难免会出现不知道写什么东西。废话不说了，开始吧。<br>参考自文档： <a href="http://www.jianshu.com/p/c2e79cf83c32" target="_blank" rel="noopener">http://www.jianshu.com/p/c2e79cf83c32</a><br>数据来自<a href="http://www.tianapi.com/" title="天行数据" target="_blank" rel="noopener">天行数据</a>，只需要注册就行。 </p>
+<h2 id="使用框架："><a href="#使用框架：" class="headerlink" title="使用框架："></a>使用框架：</h2><p>rxjava和retrofit以及一个开源扩展的RecyclerView和注解框架butterknife。<br>在工程的build.gradle的dependencies中添加</p>
+<pre><code>classpath &#39;com.neenbedankt.gradle.plugins:android-apt:1.8&#39;
+</code></pre><p>在项目build.gradle中需要添加如下代码：</p>
+<pre><code>apply plugin: &#39;com.neenbedankt.android-apt&#39;
+......
+dependencies {
+    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
+    androidTestCompile(&#39;com.android.support.test.espresso:espresso-core:2.2.2&#39;, {
+        exclude group: &#39;com.android.support&#39;, module: &#39;support-annotations&#39;
+    })
+    compile &#39;com.android.support:appcompat-v7:24.2.1&#39;
+    compile &#39;com.android.support:design:24.2.1&#39;
+    testCompile &#39;junit:junit:4.12&#39;
+    //    依赖注解
+    //    依赖添加
+    compile &#39;com.jakewharton:butterknife:8.4.0&#39;
+    apt &#39;com.jakewharton:butterknife-compiler:8.4.0&#39;
+    compile &#39;com.google.code.gson:gson:2.7&#39;
+    //    开源的高级 recyclerview
+    compile &#39;com.jude:easyrecyclerview:4.2.3&#39;
+    compile &#39;com.android.support:recyclerview-v7:24.2.0&#39;
+    //    rxjava
+    compile &#39;com.squareup.retrofit2:retrofit-converters:2.1.0&#39;
+    compile &#39;com.squareup.retrofit2:converter-gson:2.1.0&#39;
+    compile &#39;io.reactivex:rxandroid:1.2.1&#39;
+    compile &#39;com.squareup.retrofit2:adapter-rxjava:2.1.0&#39;
+    compile &#39;com.squareup.retrofit2:retrofit:2.1.0&#39;
+    compile &#39;com.squareup.retrofit2:converter-scalars:2.1.0&#39;
+    compile &#39;com.github.bumptech.glide:glide:3.7.0&#39;
+}
+</code></pre><p>千万别忘了添加权限：</p>
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.MOUNT_UNMOUNT_FILESYSTEMS&quot; /&gt;
+</code></pre><h2 id="开始制作"><a href="#开始制作" class="headerlink" title="开始制作"></a>开始制作</h2><p>我采用了fragment加载界面的方法，所以新建一个fragment，通过动态添加的方式添加fragment,Activity添加Fagment的方法如下：</p>
+<pre><code> // 1、获取 FragmentManager
+ FragmentManager fragmentManager = getSupportFragmentManager();
+ // 2、声明并获得 FragmentTransaction
+ FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+ // 3、 声明自定义的 Fragment
+ NewsFragment newsFragment = new NewsFragment();
+ // 4、 调用 FragmentTransaction 的replace方法，
+ fragmentTransaction.replace(R.id.fragment_content,newsFragment);
+ // 5、 最后提交FragmentTransaction
+ fragmentTransaction.commit();
+</code></pre><p>在NewsFragment中，复写onCreateView方法初始化页面，加载控件的小技巧：</p>
+<pre><code>@BindView(R.id.recyclerview)
+EasyRecyclerView recyclerView;
+</code></pre><p>在该方法中，可以添加下拉刷新、加载更多事件以及点击详情事件。<br>下拉刷新事件复写recyclerView的setRefreshListener即可为：</p>
+<pre><code>recyclerView.setRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                recyclerView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.clear();//清楚数据
+                        page = 0; //全局变量，加载的页数
+                        getData(); //加载数据的方法
+                    }
+                }, 1000);
+            }
+        });
+</code></pre><p>加载更多需要复写adapter的setMore方法，具体代码如下：</p>
+<pre><code>adapter.setMore()
+{
+@Override
+            public void onMoreShow() {
+                getData();//加载数据的方法
+            }
+            @Override
+            public void onMoreClick() {
+            }
+}
+</code></pre><p>加载详情的方法，复写setOnItemClickListener即可</p>
+<pre><code>//点击事件
+adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
+    @Override
+    public void onItemClick(int position) {  //position中携带item 的位置
+        ArrayList&lt;String&gt; data = new ArrayList&lt;String&gt;();
+        data.add(adapter.getAllData().get(position).getPicUrl());
+        data.add(adapter.getAllData().get(position).getUrl());
+        Intent intent = new Intent(getActivity(), NewsDetailsActivity.class);
+        //用Bundle携带数据
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList(&quot;data&quot;, data);
+        intent.putExtras(bundle);
+        startActivity(intent);
+        }
+});
+</code></pre><h5 id="下面就是最最重要的了，在onViewCreated中加载数据，"><a href="#下面就是最最重要的了，在onViewCreated中加载数据，" class="headerlink" title="下面就是最最重要的了，在onViewCreated中加载数据，"></a>下面就是最最重要的了，在onViewCreated中加载数据，</h5><p>其实该方法很简单，调用getData()方法即可。<br>最重要的代码，数据获取函数getData()方法：<br>步骤如下：<br>    1、使用retrofit 发起网络请求<br>    2、数据通过rxjava提交先在io线程里，返回到主线程<br>    3、中间设置map转换，把得到的Gson类转化为所需的News类（可以省略这一步）<br>    4、subscribe的onNext里处理返回的最终数据。<br>具体代码为：</p>
+<pre><code>private void getData() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(&quot;http://api.tianapi.com/&quot;)
+                //String
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                //添加 json 转换器
+                //    compile &#39;com.squareup.retrofit2:adapter-rxjava:2.1.0&#39;
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                //添加 RxJava 适配器
+                .build();
+
+        ApiService apiManager = retrofit.create(ApiService.class);
+        //这里采用的是Java的动态代理模式
+        apiManager.getNewsData(&quot;0271191a3d0bcd8483debff0c759f20a&quot;, 10, page)
+                .subscribeOn(Schedulers.io())
+                .map(new Func1&lt;NewsGson, List&lt;News&gt;&gt;() {
+                    @Override
+                    public List&lt;News&gt; call(NewsGson newsgson) { //
+                        List&lt;News&gt; newsList = new ArrayList&lt;News&gt;();
+                        for (NewsGson.NewslistBean newslistBean : newsgson.getNewslist()) {
+                            News new1 = new News();
+                            new1.setTitle(newslistBean.getTitle());
+                            new1.setCtime(newslistBean.getCtime());
+                            new1.setDescription(newslistBean.getDescription());
+                            new1.setPicUrl(newslistBean.getPicUrl());
+                            new1.setUrl(newslistBean.getUrl());
+                            newsList.add(new1);
+                        }
+                        Log.d(&quot;news&quot;,newsList.toString());
+                        return newsList; // 返回类型
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber&lt;List&lt;News&gt;&gt;() {
+                    @Override
+                    public void onNext(List&lt;News&gt; newsList) {
+                        adapter.addAll(newsList);
+                    }
+                    @Override
+                    public void onCompleted() {
+                    }
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(getContext(),
+                                &quot;网络连接失败&quot;, Toast.LENGTH_LONG).show();
+                    }
+                });
+        page = page + 1;
+    }
+}
+</code></pre><h5 id="自定义Service，采用Java的动态代理模式"><a href="#自定义Service，采用Java的动态代理模式" class="headerlink" title="自定义Service，采用Java的动态代理模式"></a>自定义Service，采用Java的动态代理模式</h5><pre><code>public interface ApiService {
+
+    //返回的是Gson数据而且设置为&quot;被观察者&quot;
+    @GET(&quot;social/&quot;)
+    Observable &lt;NewsGson&gt; getNewsData(@Query(&quot;key&quot;)String key,@Query(&quot;num&quot;) int num,@Query(&quot;page&quot;) int page);
+
+}
+</code></pre><p>#####通过adapter加载数据</p>
+<pre><code>public class NewsAdapter extends RecyclerArrayAdapter&lt;News&gt; {
+
+    public NewsAdapter(Context context)
+    {
+        super(context);
+    }
+
+    @Override
+    public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
+        return new NewsViewHolder(parent);//调用NewsViewHolder
+    }
+}
+</code></pre><p>通过NewsViewHolder显示数据</p>
+<pre><code>public class NewsViewHolder extends BaseViewHolder&lt;News&gt;{
+
+    private TextView mTv_name;
+    private TextView mTv_sign;
+    private ImageView mImg_face;
+
+    public NewsViewHolder(ViewGroup parent) {
+        super(parent, R.layout.news_recycler_item);
+        //    加载控件
+        mImg_face = $(R.id.person_face);
+        mTv_name = $(R.id.person_name);
+        mTv_sign = $(R.id.person_sign);
+    }
+
+    @Override
+    public void setData(News data) {
+        super.setData(data);
+        //
+        mTv_name.setText(data.getTitle());
+        mTv_sign.setText(data.getDescription());
+        Glide.with(getContext())   //网络下载并加载图片
+                .load(data.getPicUrl())
+                .placeholder(R.mipmap.ic_launcher)
+                .centerCrop()
+                .into(mImg_face);
+    }
+}
+</code></pre><h6 id="到这里，新闻加载就基本完成了，下面给出加载图片的方式，使图片能够不变形。"><a href="#到这里，新闻加载就基本完成了，下面给出加载图片的方式，使图片能够不变形。" class="headerlink" title="到这里，新闻加载就基本完成了，下面给出加载图片的方式，使图片能够不变形。"></a>到这里，新闻加载就基本完成了，下面给出加载图片的方式，使图片能够不变形。</h6><h3 id="加载图片"><a href="#加载图片" class="headerlink" title="加载图片"></a>加载图片</h3><p>这里只需要定义一个fragment，当点击了菜单栏中的 每日美图 时动态的加载界面。</p>
+<p>  该Fragment中，和新闻界面一样，在onCreateView中初始化控件，添加下拉刷新、加载更多、点击等事件，还有重要的addData()方法。下面直接看addData方法,其实和加载新闻的差不多，也是几个步骤。</p>
+<pre><code>private void addData() {
+        Retrofit retrofit = new Retrofit.Builder() // 发起网络请求
+                .baseUrl(&quot;http://api.tianapi.com/&quot;)
+                .addConverterFactory(GsonConverterFactory.create()) 
+                // 添加Gson转换器
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                //  添加Rxjava适配器
+                .build();
+
+        // 采用Java动态代理模式
+        ApiService apiManager = retrofit.create(ApiService.class);
+        apiManager.getPictureData(&quot;8fdda4c5c6876bf06524cecaef410eda&quot;,10,page)
+                .subscribeOn(Schedulers.io()) //提交数据到io线程中
+                .map(new Func1&lt;MeiNvGson, List&lt;MeiNv&gt;&gt;() {
+                    @Override
+                    public List&lt;MeiNv&gt; call(MeiNvGson meiNvGson) {
+
+                        List&lt;MeiNv&gt; meiNvList = new ArrayList&lt;MeiNv&gt;();
+                        for (MeiNvGson.NewslistBean newslistBean: meiNvGson.getNewslist())
+                        {
+                            MeiNv m1 = new MeiNv();
+                            m1.setTitle(newslistBean.getTitle());
+                            m1.setCtime(newslistBean.getCtime());
+                            m1.setDescription(newslistBean.getDescription());
+                            m1.setPicUrl(newslistBean.getPicUrl());
+                            m1.setUrl(newslistBean.getUrl());
+                            meiNvList.add(m1);
+                        }
+                        return meiNvList;
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread()) // 返回主线程
+                .subscribe(new Subscriber&lt;List&lt;MeiNv&gt;&gt;() {
+
+                    @Override
+                    public void onNext(List&lt;MeiNv&gt; meiNvList) {
+
+                        adapter.addAll(meiNvList);
+                    }
+                    @Override
+                    public void onCompleted() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                        Toast.makeText(getContext(),&quot;连接网络失败&quot;,Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        page = page + 1;
+    }
+</code></pre><p>适配器的代码为：</p>
+<pre><code>public class ImageAdapter extends RecyclerArrayAdapter &lt;MeiNv&gt; {
+
+    public ImageAdapter(Context context)
+    {
+        super(context);
+    }
+
+    @Override
+    public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ImageViewHolder(parent);
+    }
+}
+</code></pre><pre><code>public class ImageViewHolder extends BaseViewHolder&lt;MeiNv&gt;{
+
+    ImageView imgPicture;
+    public ImageViewHolder(ViewGroup parent){
+        super(new ImageView(parent.getContext()));
+
+        imgPicture = (ImageView) itemView;
+        imgPicture.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        imgPicture.setScaleType(ImageView.ScaleType.CENTER_CROP);
+    }
+
+    @Override
+    public void setData(MeiNv data) {
+
+        final DisplayMetrics dm = getContext().getResources().getDisplayMetrics();
+        Glide.with(getContext())
+                .load(data.getPicUrl())
+                .asBitmap()
+                .into(new SimpleTarget&lt;Bitmap&gt;(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL) {
+                    @Override
+                    public void onResourceReady(Bitmap bitmap, GlideAnimation&lt;? super Bitmap&gt; glideAnimation) {
+                        int width = dm.widthPixels / 2 - 10;//宽度为屏幕宽度一半
+                        int heigh = bitmap.getHeight() * width / bitmap.getWidth(); //计算View的高度
+                        //获取bitmap信息，可赋值给外部变量操作，也可在此时行操作。
+                        ViewGroup.LayoutParams params = imgPicture.getLayoutParams();
+                        params.height = heigh;
+                        params.width = width;
+                        imgPicture.setLayoutParams(params);
+                        imgPicture.setScaleType(ImageView.ScaleType.FIT_XY);
+                        imgPicture.setImageBitmap(bitmap);
+                    }
+                });
+    }
+}
+</code></pre><p>到这里基本上就完成了，下面记录两个用到的小知识。</p>
+<hr>
+<h5 id="1、保存图片"><a href="#1、保存图片" class="headerlink" title="1、保存图片"></a>1、保存图片</h5><p>可以给ImageView添加长按监听事件（setOnLongClickListener），在里面调用保存图片函数，保存图片到本地的函数如下：</p>
+<pre><code>public static void saveImage(ImageView shot, Context context){
+
+        // 获取外部存储目录
+        File externalStorageDirectory = Environment.getExternalStorageDirectory();
+        // 新建目录
+        File directory = new File(externalStorageDirectory, &quot;NewsPicture&quot;);
+        if (! directory.exists())
+        {
+              // File.mkdirs()方法可以建好一个完整的路径
+            // File.mkdir()  只能在已经存在的目录中创建创建文件夹。 
+            directory.mkdir(); //创建文件
+        }
+        Bitmap drawingCache = shot.getDrawingCache();
+
+        File file = new File(directory, new Date().getTime() + &quot;.jpg&quot;);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            // 保存图片
+            drawingCache.compress(Bitmap.CompressFormat.JPEG,100,fos);
+            // 发送广播
+            Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            Uri uri = Uri.fromFile(file);
+            intent.setData(uri);
+            context.sendBroadcast(intent);
+            Toast.makeText(context,&quot;保存成功&quot;,Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            Toast.makeText(context,&quot;保存出错&quot;,Toast.LENGTH_LONG).show();
+        }
+    }
+</code></pre><h5 id="2、按照图片比例设置图片大小"><a href="#2、按照图片比例设置图片大小" class="headerlink" title="2、按照图片比例设置图片大小"></a>2、按照图片比例设置图片大小</h5><p>在加载图片过程中，相信大家都遇到这样的问题：由于没有按照图片的比例加载图片，加载后会出现图片失真的现象。下面就教大家如何加载的图片不会失真，还是在代码中看吧。</p>
+<pre><code>// 获取屏幕大小
+final DisplayMetrics dm = getResources().getDisplayMetrics();
+// 设置宽度为屏幕宽度
+int width = dm.widthPixels;
+// 设置高度为 图片高度 * 屏幕宽度 / 图片宽度
+int height = bitmap.getHeight()*width/bitmap.getWidth();
+// 获取ImageView尺寸
+ViewGroup.LayoutParams params = imgPicture.getLayoutParams();
+params.width = width;
+params.height = height;
+imgPicture.setLayoutParams(params);
+// 设置图片填充满 ImageView
+imgPicture.setScaleType(ImageView.ScaleType.FIT_XY);
+imgPicture.setImageBitmap(resource);
+</code></pre>
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/11/11/使用IntelliJ IDEA搭建maven+smm框架(二)/" title="使用IntelliJ IDEA搭建maven+smm框架(二)">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用框架："><span class="post-toc-text">使用框架：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始制作"><span class="post-toc-text">开始制作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#下面就是最最重要的了，在onViewCreated中加载数据，"><span class="post-toc-text">下面就是最最重要的了，在onViewCreated中加载数据，</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自定义Service，采用Java的动态代理模式"><span class="post-toc-text">自定义Service，采用Java的动态代理模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#到这里，新闻加载就基本完成了，下面给出加载图片的方式，使图片能够不变形。"><span class="post-toc-text">到这里，新闻加载就基本完成了，下面给出加载图片的方式，使图片能够不变形。</span></a></li></ol></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加载图片"><span class="post-toc-text">加载图片</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1、保存图片"><span class="post-toc-text">1、保存图片</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2、按照图片比例设置图片大小"><span class="post-toc-text">2、按照图片比例设置图片大小</span></a></li></ol></li>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by John Doe. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+	<div class="popup search-popup local-search-popup">
+    <span class="popup-btn-close">
+      ESC
+    </span>
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+
+        <div class="local-search-header clearfix">
+            <span class="search-icon"></span>
+            <div class="local-search-input-wrapper">
+              <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+            </div>
+        </div>
+
+        <div id="local-search-result"></div>
+
+      </div>
+    </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem +=  "<p class=\"search-result\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /> no result </div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://Sariay.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
